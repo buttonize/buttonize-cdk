@@ -1,8 +1,11 @@
-const { cdk8s } = require('projen');
-const project = new cdk8s.ConstructLibraryCdk8s({
+const { awscdk } = require('projen');
+
+const project = new awscdk.AwsCdkConstructLibrary({
   name: '@buttonize/cdk',
   license: 'MIT',
   minNodeVersion: '14.17.0',
+
+  cdkVersion: '2.1.0',
 
   author: 'Buttonzie',
   authorOrganization: 'Buttonize',
@@ -54,7 +57,7 @@ const project = new cdk8s.ConstructLibraryCdk8s({
 
 project.addFields({
   'lint-staged': {
-    '*.{ts,js,json}': 'eslint --fix',
+    '*.{ts,js}': 'eslint --fix',
   },
 });
 
