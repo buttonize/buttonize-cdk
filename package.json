@@ -64,7 +64,10 @@
     "constructs": "^10.0.5"
   },
   "keywords": [
-    "cdk"
+    "aws",
+    "aws-cdk",
+    "cdk",
+    "serverless"
   ],
   "engines": {
     "node": ">= 14.17.0"

@@ -4,6 +4,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   name: '@buttonize/cdk',
   license: 'MIT',
   minNodeVersion: '14.17.0',
+  keywords: ['aws-cdk', 'cdk', 'serverless', 'aws'],
 
   cdkVersion: '2.1.0',
 
