@@ -20,3 +20,9 @@ dist
 tsconfig.tsbuildinfo
 /.eslintrc.json
 !.jsii
+.husky
+.editorconfig
+.gitattributes
+.nvmrc
+commitlint.config.js
+renovate.json

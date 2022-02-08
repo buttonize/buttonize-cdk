@@ -68,4 +68,14 @@ project.addFields({
 
 project.setScript('prepare', 'husky install');
 
+// .npmignore
+[
+  '.husky',
+  '.editorconfig',
+  '.gitattributes',
+  '.nvmrc',
+  'commitlint.config.js',
+  'renovate.json',
+].forEach((pattern) => project.addPackageIgnore(pattern));
+
 project.synth();
