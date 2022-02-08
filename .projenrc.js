@@ -1,4 +1,4 @@
-const { awscdk } = require('projen');
+const { awscdk, NodePackageManager } = require('projen');
 
 const project = new awscdk.AwsCdkConstructLibrary({
   name: '@buttonize/cdk',
@@ -47,6 +47,8 @@ const project = new awscdk.AwsCdkConstructLibrary({
     },
   },
 
+  packageManager: 'npm',
+
   // Maybe nice features, but keeping it simple for now
   githubOptions: {
     mergify: false,
@@ -54,6 +56,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
     pullRequestLint: false,
   },
 });
+
 
 project.addFields({
   'lint-staged': {
