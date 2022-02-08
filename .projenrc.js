@@ -48,6 +48,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   },
 
   packageManager: 'npm',
+  npmAccess: 'public',
 
   // Maybe nice features, but keeping it simple for now
   githubOptions: {
