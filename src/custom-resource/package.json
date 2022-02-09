@@ -1,0 +1,8 @@
+{
+	"name": "serverless-plugin-buttonize-resources",
+	"private": true,
+	"license": "MIT",
+	"devDependencies": {
+		"cfn-response": "^1.0.1"
+	}
+}
