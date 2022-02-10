@@ -4,7 +4,7 @@ import { ButtonizeCustomResource } from './ButtonizeCustomResource'
 import { Widget } from './types'
 
 export interface ButtonizeLambdaEventSourceOptions {
-	apiKey?: string
+	readonly apiKey?: string
 }
 
 export class ButtonizeLambdaEventSource implements IEventSource {

@@ -4,10 +4,10 @@ import { Construct } from 'constructs'
 import { ButtonizeCustomResourceProvider } from './ButtonizeCustomResourceProvider'
 import { LambdaResource, Widget } from './types'
 
-export type ButtonizeCustomResourceProps = {
-	resource: LambdaResource
-	widget: Widget
-	apiKey?: string
+export interface ButtonizeCustomResourceProps {
+	readonly resource: LambdaResource
+	readonly widget: Widget
+	readonly apiKey?: string
 }
 
 export class ButtonizeCustomResource extends CfnResource {

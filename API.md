@@ -452,14 +452,142 @@ const buttonizeCustomResourceProps: ButtonizeCustomResourceProps = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@buttonize/cdk.ButtonizeCustomResourceProps.property.lambda">lambda</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@buttonize/cdk.ButtonizeCustomResourceProps.property.resource">resource</a></code> | <code><a href="#@buttonize/cdk.LambdaResource">LambdaResource</a></code> | *No description.* |
+| <code><a href="#@buttonize/cdk.ButtonizeCustomResourceProps.property.widget">widget</a></code> | <code><a href="#@buttonize/cdk.Widget">Widget</a></code> | *No description.* |
+| <code><a href="#@buttonize/cdk.ButtonizeCustomResourceProps.property.apiKey">apiKey</a></code> | <code>string</code> | *No description.* |
 
 ---
 
-##### `lambda`<sup>Required</sup> <a name="lambda" id="@buttonize/cdk.ButtonizeCustomResourceProps.property.lambda"></a>
+##### `resource`<sup>Required</sup> <a name="resource" id="@buttonize/cdk.ButtonizeCustomResourceProps.property.resource"></a>
 
 ```typescript
-public readonly lambda: string;
+public readonly resource: LambdaResource;
+```
+
+- *Type:* <a href="#@buttonize/cdk.LambdaResource">LambdaResource</a>
+
+---
+
+##### `widget`<sup>Required</sup> <a name="widget" id="@buttonize/cdk.ButtonizeCustomResourceProps.property.widget"></a>
+
+```typescript
+public readonly widget: Widget;
+```
+
+- *Type:* <a href="#@buttonize/cdk.Widget">Widget</a>
+
+---
+
+##### `apiKey`<sup>Optional</sup> <a name="apiKey" id="@buttonize/cdk.ButtonizeCustomResourceProps.property.apiKey"></a>
+
+```typescript
+public readonly apiKey: string;
+```
+
+- *Type:* string
+
+---
+
+### ButtonizeLambdaEventSourceOptions <a name="ButtonizeLambdaEventSourceOptions" id="@buttonize/cdk.ButtonizeLambdaEventSourceOptions"></a>
+
+#### Initializer <a name="Initializer" id="@buttonize/cdk.ButtonizeLambdaEventSourceOptions.Initializer"></a>
+
+```typescript
+import { ButtonizeLambdaEventSourceOptions } from '@buttonize/cdk'
+
+const buttonizeLambdaEventSourceOptions: ButtonizeLambdaEventSourceOptions = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@buttonize/cdk.ButtonizeLambdaEventSourceOptions.property.apiKey">apiKey</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `apiKey`<sup>Optional</sup> <a name="apiKey" id="@buttonize/cdk.ButtonizeLambdaEventSourceOptions.property.apiKey"></a>
+
+```typescript
+public readonly apiKey: string;
+```
+
+- *Type:* string
+
+---
+
+### LambdaResource <a name="LambdaResource" id="@buttonize/cdk.LambdaResource"></a>
+
+#### Initializer <a name="Initializer" id="@buttonize/cdk.LambdaResource.Initializer"></a>
+
+```typescript
+import { LambdaResource } from '@buttonize/cdk'
+
+const lambdaResource: LambdaResource = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@buttonize/cdk.LambdaResource.property.lambdaArn">lambdaArn</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@buttonize/cdk.LambdaResource.property.type">type</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `lambdaArn`<sup>Required</sup> <a name="lambdaArn" id="@buttonize/cdk.LambdaResource.property.lambdaArn"></a>
+
+```typescript
+public readonly lambdaArn: string;
+```
+
+- *Type:* string
+
+---
+
+##### `type`<sup>Required</sup> <a name="type" id="@buttonize/cdk.LambdaResource.property.type"></a>
+
+```typescript
+public readonly type: string;
+```
+
+- *Type:* string
+
+---
+
+### Widget <a name="Widget" id="@buttonize/cdk.Widget"></a>
+
+#### Initializer <a name="Initializer" id="@buttonize/cdk.Widget.Initializer"></a>
+
+```typescript
+import { Widget } from '@buttonize/cdk'
+
+const widget: Widget = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@buttonize/cdk.Widget.property.name">name</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@buttonize/cdk.Widget.property.type">type</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `name`<sup>Required</sup> <a name="name" id="@buttonize/cdk.Widget.property.name"></a>
+
+```typescript
+public readonly name: string;
+```
+
+- *Type:* string
+
+---
+
+##### `type`<sup>Required</sup> <a name="type" id="@buttonize/cdk.Widget.property.type"></a>
+
+```typescript
+public readonly type: string;
 ```
 
 - *Type:* string
@@ -467,6 +595,52 @@ public readonly lambda: string;
 ---
 
 ## Classes <a name="Classes" id="Classes"></a>
+
+### ButtonizeApiKey <a name="ButtonizeApiKey" id="@buttonize/cdk.ButtonizeApiKey"></a>
+
+#### Initializers <a name="Initializers" id="@buttonize/cdk.ButtonizeApiKey.Initializer"></a>
+
+```typescript
+import { ButtonizeApiKey } from '@buttonize/cdk'
+
+new ButtonizeApiKey()
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+
+---
+
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@buttonize/cdk.ButtonizeApiKey.setDefaultApiKey">setDefaultApiKey</a></code> | *No description.* |
+
+---
+
+##### `setDefaultApiKey` <a name="setDefaultApiKey" id="@buttonize/cdk.ButtonizeApiKey.setDefaultApiKey"></a>
+
+```typescript
+import { ButtonizeApiKey } from '@buttonize/cdk'
+
+ButtonizeApiKey.setDefaultApiKey(scope: Construct, apiKey: string)
+```
+
+###### `scope`<sup>Required</sup> <a name="scope" id="@buttonize/cdk.ButtonizeApiKey.setDefaultApiKey.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+###### `apiKey`<sup>Required</sup> <a name="apiKey" id="@buttonize/cdk.ButtonizeApiKey.setDefaultApiKey.parameter.apiKey"></a>
+
+- *Type:* string
+
+---
+
+
 
 ### ButtonizeLambdaEventSource <a name="ButtonizeLambdaEventSource" id="@buttonize/cdk.ButtonizeLambdaEventSource"></a>
 
@@ -477,11 +651,25 @@ public readonly lambda: string;
 ```typescript
 import { ButtonizeLambdaEventSource } from '@buttonize/cdk'
 
-new ButtonizeLambdaEventSource()
+new ButtonizeLambdaEventSource(widgetProps: Widget, options?: ButtonizeLambdaEventSourceOptions)
 ```
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
+| <code><a href="#@buttonize/cdk.ButtonizeLambdaEventSource.Initializer.parameter.widgetProps">widgetProps</a></code> | <code><a href="#@buttonize/cdk.Widget">Widget</a></code> | *No description.* |
+| <code><a href="#@buttonize/cdk.ButtonizeLambdaEventSource.Initializer.parameter.options">options</a></code> | <code><a href="#@buttonize/cdk.ButtonizeLambdaEventSourceOptions">ButtonizeLambdaEventSourceOptions</a></code> | *No description.* |
+
+---
+
+##### `widgetProps`<sup>Required</sup> <a name="widgetProps" id="@buttonize/cdk.ButtonizeLambdaEventSource.Initializer.parameter.widgetProps"></a>
+
+- *Type:* <a href="#@buttonize/cdk.Widget">Widget</a>
+
+---
+
+##### `options`<sup>Optional</sup> <a name="options" id="@buttonize/cdk.ButtonizeLambdaEventSource.Initializer.parameter.options"></a>
+
+- *Type:* <a href="#@buttonize/cdk.ButtonizeLambdaEventSourceOptions">ButtonizeLambdaEventSourceOptions</a>
 
 ---
 
@@ -508,6 +696,34 @@ Called by `lambda.addEventSource` to allow the event source to bind to this func
 ---
 
 
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@buttonize/cdk.ButtonizeLambdaEventSource.property.widgetProps">widgetProps</a></code> | <code><a href="#@buttonize/cdk.Widget">Widget</a></code> | *No description.* |
+| <code><a href="#@buttonize/cdk.ButtonizeLambdaEventSource.property.options">options</a></code> | <code><a href="#@buttonize/cdk.ButtonizeLambdaEventSourceOptions">ButtonizeLambdaEventSourceOptions</a></code> | *No description.* |
+
+---
+
+##### `widgetProps`<sup>Required</sup> <a name="widgetProps" id="@buttonize/cdk.ButtonizeLambdaEventSource.property.widgetProps"></a>
+
+```typescript
+public readonly widgetProps: Widget;
+```
+
+- *Type:* <a href="#@buttonize/cdk.Widget">Widget</a>
+
+---
+
+##### `options`<sup>Optional</sup> <a name="options" id="@buttonize/cdk.ButtonizeLambdaEventSource.property.options"></a>
+
+```typescript
+public readonly options: ButtonizeLambdaEventSourceOptions;
+```
+
+- *Type:* <a href="#@buttonize/cdk.ButtonizeLambdaEventSourceOptions">ButtonizeLambdaEventSourceOptions</a>
+
+---
 
 
 
