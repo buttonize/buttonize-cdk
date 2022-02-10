@@ -1,4 +1,5 @@
 export * from './ButtonizeCustomResource'
+export * from './ButtonizeCustomTarget'
 export * from './ButtonizeLambdaEventSource'
 export * from './ButtonizeApiKey'
 export * from './types'

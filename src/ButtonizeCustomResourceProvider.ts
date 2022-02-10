@@ -32,7 +32,9 @@ export class ButtonizeCustomResourceProvider extends Construct {
 	}
 
 	public readonly serviceToken: string
+
 	private readonly handler: SingletonFunction
+
 	private defaultApiKey: string | boolean = false
 
 	protected constructor(scope: Construct) {

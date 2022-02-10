@@ -30,6 +30,16 @@ export class Buttonize extends Construct {
 				{ apiKey: 'asda' }
 			)
 		)
+
+		handler.addEventSource(
+			new ButtonizeLambdaEventSource(
+				{
+					name: 'cvxcvxcvx',
+					type: 'button'
+				},
+				{ apiKey: 'mbklvjkoejriopq' }
+			)
+		)
 	}
 }
 

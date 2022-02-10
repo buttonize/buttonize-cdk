@@ -9,13 +9,14 @@
 ```typescript
 import { ButtonizeCustomResource } from '@buttonize/cdk'
 
-new ButtonizeCustomResource(scope: Construct, props: ButtonizeCustomResourceProps)
+new ButtonizeCustomResource(scope: Construct, id: string, __2: ButtonizeCustomResourceProps)
 ```
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#@buttonize/cdk.ButtonizeCustomResource.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
-| <code><a href="#@buttonize/cdk.ButtonizeCustomResource.Initializer.parameter.props">props</a></code> | <code><a href="#@buttonize/cdk.ButtonizeCustomResourceProps">ButtonizeCustomResourceProps</a></code> | *No description.* |
+| <code><a href="#@buttonize/cdk.ButtonizeCustomResource.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@buttonize/cdk.ButtonizeCustomResource.Initializer.parameter.__2">__2</a></code> | <code><a href="#@buttonize/cdk.ButtonizeCustomResourceProps">ButtonizeCustomResourceProps</a></code> | *No description.* |
 
 ---
 
@@ -25,7 +26,13 @@ new ButtonizeCustomResource(scope: Construct, props: ButtonizeCustomResourceProp
 
 ---
 
-##### `props`<sup>Required</sup> <a name="props" id="@buttonize/cdk.ButtonizeCustomResource.Initializer.parameter.props"></a>
+##### `id`<sup>Required</sup> <a name="id" id="@buttonize/cdk.ButtonizeCustomResource.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+##### `__2`<sup>Required</sup> <a name="__2" id="@buttonize/cdk.ButtonizeCustomResource.Initializer.parameter.__2"></a>
 
 - *Type:* <a href="#@buttonize/cdk.ButtonizeCustomResourceProps">ButtonizeCustomResourceProps</a>
 
@@ -436,6 +443,105 @@ AWS resource type.
 ---
 
 
+### ButtonizeCustomTarget <a name="ButtonizeCustomTarget" id="@buttonize/cdk.ButtonizeCustomTarget"></a>
+
+#### Initializers <a name="Initializers" id="@buttonize/cdk.ButtonizeCustomTarget.Initializer"></a>
+
+```typescript
+import { ButtonizeCustomTarget } from '@buttonize/cdk'
+
+new ButtonizeCustomTarget(scope: Construct, id: string, __2: ButtonizeCustomTargetProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@buttonize/cdk.ButtonizeCustomTarget.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#@buttonize/cdk.ButtonizeCustomTarget.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@buttonize/cdk.ButtonizeCustomTarget.Initializer.parameter.__2">__2</a></code> | <code><a href="#@buttonize/cdk.ButtonizeCustomTargetProps">ButtonizeCustomTargetProps</a></code> | *No description.* |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="@buttonize/cdk.ButtonizeCustomTarget.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="@buttonize/cdk.ButtonizeCustomTarget.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+##### `__2`<sup>Required</sup> <a name="__2" id="@buttonize/cdk.ButtonizeCustomTarget.Initializer.parameter.__2"></a>
+
+- *Type:* <a href="#@buttonize/cdk.ButtonizeCustomTargetProps">ButtonizeCustomTargetProps</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@buttonize/cdk.ButtonizeCustomTarget.toString">toString</a></code> | Returns a string representation of this construct. |
+
+---
+
+##### `toString` <a name="toString" id="@buttonize/cdk.ButtonizeCustomTarget.toString"></a>
+
+```typescript
+public toString()
+```
+
+Returns a string representation of this construct.
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@buttonize/cdk.ButtonizeCustomTarget.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+
+---
+
+##### ~~`isConstruct`~~ <a name="isConstruct" id="@buttonize/cdk.ButtonizeCustomTarget.isConstruct"></a>
+
+```typescript
+import { ButtonizeCustomTarget } from '@buttonize/cdk'
+
+ButtonizeCustomTarget.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+###### `x`<sup>Required</sup> <a name="x" id="@buttonize/cdk.ButtonizeCustomTarget.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@buttonize/cdk.ButtonizeCustomTarget.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="@buttonize/cdk.ButtonizeCustomTarget.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+
 ## Structs <a name="Structs" id="Structs"></a>
 
 ### ButtonizeCustomResourceProps <a name="ButtonizeCustomResourceProps" id="@buttonize/cdk.ButtonizeCustomResourceProps"></a>
@@ -452,19 +558,19 @@ const buttonizeCustomResourceProps: ButtonizeCustomResourceProps = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@buttonize/cdk.ButtonizeCustomResourceProps.property.resource">resource</a></code> | <code><a href="#@buttonize/cdk.LambdaResource">LambdaResource</a></code> | *No description.* |
+| <code><a href="#@buttonize/cdk.ButtonizeCustomResourceProps.property.target">target</a></code> | <code><a href="#@buttonize/cdk.LambdaTarget">LambdaTarget</a> \| <a href="#@buttonize/cdk.CustomTarget">CustomTarget</a></code> | *No description.* |
 | <code><a href="#@buttonize/cdk.ButtonizeCustomResourceProps.property.widget">widget</a></code> | <code><a href="#@buttonize/cdk.Widget">Widget</a></code> | *No description.* |
 | <code><a href="#@buttonize/cdk.ButtonizeCustomResourceProps.property.apiKey">apiKey</a></code> | <code>string</code> | *No description.* |
 
 ---
 
-##### `resource`<sup>Required</sup> <a name="resource" id="@buttonize/cdk.ButtonizeCustomResourceProps.property.resource"></a>
+##### `target`<sup>Required</sup> <a name="target" id="@buttonize/cdk.ButtonizeCustomResourceProps.property.target"></a>
 
 ```typescript
-public readonly resource: LambdaResource;
+public readonly target: LambdaTarget | CustomTarget;
 ```
 
-- *Type:* <a href="#@buttonize/cdk.LambdaResource">LambdaResource</a>
+- *Type:* <a href="#@buttonize/cdk.LambdaTarget">LambdaTarget</a> | <a href="#@buttonize/cdk.CustomTarget">CustomTarget</a>
 
 ---
 
@@ -479,6 +585,67 @@ public readonly widget: Widget;
 ---
 
 ##### `apiKey`<sup>Optional</sup> <a name="apiKey" id="@buttonize/cdk.ButtonizeCustomResourceProps.property.apiKey"></a>
+
+```typescript
+public readonly apiKey: string;
+```
+
+- *Type:* string
+
+---
+
+### ButtonizeCustomTargetProps <a name="ButtonizeCustomTargetProps" id="@buttonize/cdk.ButtonizeCustomTargetProps"></a>
+
+#### Initializer <a name="Initializer" id="@buttonize/cdk.ButtonizeCustomTargetProps.Initializer"></a>
+
+```typescript
+import { ButtonizeCustomTargetProps } from '@buttonize/cdk'
+
+const buttonizeCustomTargetProps: ButtonizeCustomTargetProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@buttonize/cdk.ButtonizeCustomTargetProps.property.inputVtlTemplate">inputVtlTemplate</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@buttonize/cdk.ButtonizeCustomTargetProps.property.outputVtlTemplate">outputVtlTemplate</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@buttonize/cdk.ButtonizeCustomTargetProps.property.widget">widget</a></code> | <code><a href="#@buttonize/cdk.Widget">Widget</a></code> | *No description.* |
+| <code><a href="#@buttonize/cdk.ButtonizeCustomTargetProps.property.apiKey">apiKey</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `inputVtlTemplate`<sup>Required</sup> <a name="inputVtlTemplate" id="@buttonize/cdk.ButtonizeCustomTargetProps.property.inputVtlTemplate"></a>
+
+```typescript
+public readonly inputVtlTemplate: string;
+```
+
+- *Type:* string
+
+---
+
+##### `outputVtlTemplate`<sup>Required</sup> <a name="outputVtlTemplate" id="@buttonize/cdk.ButtonizeCustomTargetProps.property.outputVtlTemplate"></a>
+
+```typescript
+public readonly outputVtlTemplate: string;
+```
+
+- *Type:* string
+
+---
+
+##### `widget`<sup>Required</sup> <a name="widget" id="@buttonize/cdk.ButtonizeCustomTargetProps.property.widget"></a>
+
+```typescript
+public readonly widget: Widget;
+```
+
+- *Type:* <a href="#@buttonize/cdk.Widget">Widget</a>
+
+---
+
+##### `apiKey`<sup>Optional</sup> <a name="apiKey" id="@buttonize/cdk.ButtonizeCustomTargetProps.property.apiKey"></a>
 
 ```typescript
 public readonly apiKey: string;
@@ -516,26 +683,76 @@ public readonly apiKey: string;
 
 ---
 
-### LambdaResource <a name="LambdaResource" id="@buttonize/cdk.LambdaResource"></a>
+### CustomTarget <a name="CustomTarget" id="@buttonize/cdk.CustomTarget"></a>
 
-#### Initializer <a name="Initializer" id="@buttonize/cdk.LambdaResource.Initializer"></a>
+#### Initializer <a name="Initializer" id="@buttonize/cdk.CustomTarget.Initializer"></a>
 
 ```typescript
-import { LambdaResource } from '@buttonize/cdk'
+import { CustomTarget } from '@buttonize/cdk'
 
-const lambdaResource: LambdaResource = { ... }
+const customTarget: CustomTarget = { ... }
 ```
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@buttonize/cdk.LambdaResource.property.lambdaArn">lambdaArn</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@buttonize/cdk.LambdaResource.property.type">type</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@buttonize/cdk.CustomTarget.property.inputVtlTemplate">inputVtlTemplate</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@buttonize/cdk.CustomTarget.property.outputVtlTemplate">outputVtlTemplate</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@buttonize/cdk.CustomTarget.property.type">type</a></code> | <code>string</code> | *No description.* |
 
 ---
 
-##### `lambdaArn`<sup>Required</sup> <a name="lambdaArn" id="@buttonize/cdk.LambdaResource.property.lambdaArn"></a>
+##### `inputVtlTemplate`<sup>Required</sup> <a name="inputVtlTemplate" id="@buttonize/cdk.CustomTarget.property.inputVtlTemplate"></a>
+
+```typescript
+public readonly inputVtlTemplate: string;
+```
+
+- *Type:* string
+
+---
+
+##### `outputVtlTemplate`<sup>Required</sup> <a name="outputVtlTemplate" id="@buttonize/cdk.CustomTarget.property.outputVtlTemplate"></a>
+
+```typescript
+public readonly outputVtlTemplate: string;
+```
+
+- *Type:* string
+
+---
+
+##### `type`<sup>Required</sup> <a name="type" id="@buttonize/cdk.CustomTarget.property.type"></a>
+
+```typescript
+public readonly type: string;
+```
+
+- *Type:* string
+
+---
+
+### LambdaTarget <a name="LambdaTarget" id="@buttonize/cdk.LambdaTarget"></a>
+
+#### Initializer <a name="Initializer" id="@buttonize/cdk.LambdaTarget.Initializer"></a>
+
+```typescript
+import { LambdaTarget } from '@buttonize/cdk'
+
+const lambdaTarget: LambdaTarget = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@buttonize/cdk.LambdaTarget.property.lambdaArn">lambdaArn</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@buttonize/cdk.LambdaTarget.property.type">type</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `lambdaArn`<sup>Required</sup> <a name="lambdaArn" id="@buttonize/cdk.LambdaTarget.property.lambdaArn"></a>
 
 ```typescript
 public readonly lambdaArn: string;
@@ -545,7 +762,7 @@ public readonly lambdaArn: string;
 
 ---
 
-##### `type`<sup>Required</sup> <a name="type" id="@buttonize/cdk.LambdaResource.property.type"></a>
+##### `type`<sup>Required</sup> <a name="type" id="@buttonize/cdk.LambdaTarget.property.type"></a>
 
 ```typescript
 public readonly type: string;
@@ -696,34 +913,6 @@ Called by `lambda.addEventSource` to allow the event source to bind to this func
 ---
 
 
-#### Properties <a name="Properties" id="Properties"></a>
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#@buttonize/cdk.ButtonizeLambdaEventSource.property.widgetProps">widgetProps</a></code> | <code><a href="#@buttonize/cdk.Widget">Widget</a></code> | *No description.* |
-| <code><a href="#@buttonize/cdk.ButtonizeLambdaEventSource.property.options">options</a></code> | <code><a href="#@buttonize/cdk.ButtonizeLambdaEventSourceOptions">ButtonizeLambdaEventSourceOptions</a></code> | *No description.* |
-
----
-
-##### `widgetProps`<sup>Required</sup> <a name="widgetProps" id="@buttonize/cdk.ButtonizeLambdaEventSource.property.widgetProps"></a>
-
-```typescript
-public readonly widgetProps: Widget;
-```
-
-- *Type:* <a href="#@buttonize/cdk.Widget">Widget</a>
-
----
-
-##### `options`<sup>Optional</sup> <a name="options" id="@buttonize/cdk.ButtonizeLambdaEventSource.property.options"></a>
-
-```typescript
-public readonly options: ButtonizeLambdaEventSourceOptions;
-```
-
-- *Type:* <a href="#@buttonize/cdk.ButtonizeLambdaEventSourceOptions">ButtonizeLambdaEventSourceOptions</a>
-
----
 
 
 

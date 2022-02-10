@@ -1,6 +1,12 @@
-export interface LambdaResource {
+export interface LambdaTarget {
 	readonly type: 'lambda'
 	readonly lambdaArn: string
+}
+
+export interface CustomTarget {
+	readonly type: 'custom'
+	readonly inputVtlTemplate: string
+	readonly outputVtlTemplate: string
 }
 
 export interface Widget {

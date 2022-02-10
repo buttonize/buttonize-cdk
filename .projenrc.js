@@ -46,13 +46,13 @@ const project = new awscdk.AwsCdkConstructLibrary({
 		jestConfig: {
 			collectCoverage: true,
 			collectCoverageFrom: ['src/**/*.ts'],
-			coverageProvider: 'v8',
-			coverageThreshold: {
-				branches: 100,
-				functions: 100,
-				lines: 100,
-				statements: 100
-			}
+			coverageProvider: 'v8'
+			// coverageThreshold: {
+			// 	branches: 100,
+			// 	functions: 100,
+			// 	lines: 100,
+			// 	statements: 100
+			// }
 		}
 	},
 
