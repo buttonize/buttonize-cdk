@@ -450,7 +450,7 @@ AWS resource type.
 ```typescript
 import { ButtonizeCustomTarget } from '@buttonize/cdk'
 
-new ButtonizeCustomTarget(scope: Construct, id: string, __2: ButtonizeCustomTargetProps)
+new ButtonizeCustomTarget(scope: Construct, id: string, __2: ButtonizeCustomTargetProps, __3?: ButtonizeCustomTargetOptions)
 ```
 
 | **Name** | **Type** | **Description** |
@@ -458,6 +458,7 @@ new ButtonizeCustomTarget(scope: Construct, id: string, __2: ButtonizeCustomTarg
 | <code><a href="#@buttonize/cdk.ButtonizeCustomTarget.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
 | <code><a href="#@buttonize/cdk.ButtonizeCustomTarget.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@buttonize/cdk.ButtonizeCustomTarget.Initializer.parameter.__2">__2</a></code> | <code><a href="#@buttonize/cdk.ButtonizeCustomTargetProps">ButtonizeCustomTargetProps</a></code> | *No description.* |
+| <code><a href="#@buttonize/cdk.ButtonizeCustomTarget.Initializer.parameter.__3">__3</a></code> | <code><a href="#@buttonize/cdk.ButtonizeCustomTargetOptions">ButtonizeCustomTargetOptions</a></code> | *No description.* |
 
 ---
 
@@ -476,6 +477,12 @@ new ButtonizeCustomTarget(scope: Construct, id: string, __2: ButtonizeCustomTarg
 ##### `__2`<sup>Required</sup> <a name="__2" id="@buttonize/cdk.ButtonizeCustomTarget.Initializer.parameter.__2"></a>
 
 - *Type:* <a href="#@buttonize/cdk.ButtonizeCustomTargetProps">ButtonizeCustomTargetProps</a>
+
+---
+
+##### `__3`<sup>Optional</sup> <a name="__3" id="@buttonize/cdk.ButtonizeCustomTarget.Initializer.parameter.__3"></a>
+
+- *Type:* <a href="#@buttonize/cdk.ButtonizeCustomTargetOptions">ButtonizeCustomTargetOptions</a>
 
 ---
 
@@ -594,6 +601,34 @@ public readonly apiKey: string;
 
 ---
 
+### ButtonizeCustomTargetOptions <a name="ButtonizeCustomTargetOptions" id="@buttonize/cdk.ButtonizeCustomTargetOptions"></a>
+
+#### Initializer <a name="Initializer" id="@buttonize/cdk.ButtonizeCustomTargetOptions.Initializer"></a>
+
+```typescript
+import { ButtonizeCustomTargetOptions } from '@buttonize/cdk'
+
+const buttonizeCustomTargetOptions: ButtonizeCustomTargetOptions = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@buttonize/cdk.ButtonizeCustomTargetOptions.property.apiKey">apiKey</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `apiKey`<sup>Optional</sup> <a name="apiKey" id="@buttonize/cdk.ButtonizeCustomTargetOptions.property.apiKey"></a>
+
+```typescript
+public readonly apiKey: string;
+```
+
+- *Type:* string
+
+---
+
 ### ButtonizeCustomTargetProps <a name="ButtonizeCustomTargetProps" id="@buttonize/cdk.ButtonizeCustomTargetProps"></a>
 
 #### Initializer <a name="Initializer" id="@buttonize/cdk.ButtonizeCustomTargetProps.Initializer"></a>
@@ -611,7 +646,6 @@ const buttonizeCustomTargetProps: ButtonizeCustomTargetProps = { ... }
 | <code><a href="#@buttonize/cdk.ButtonizeCustomTargetProps.property.inputVtlTemplate">inputVtlTemplate</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@buttonize/cdk.ButtonizeCustomTargetProps.property.outputVtlTemplate">outputVtlTemplate</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@buttonize/cdk.ButtonizeCustomTargetProps.property.widget">widget</a></code> | <code><a href="#@buttonize/cdk.Widget">Widget</a></code> | *No description.* |
-| <code><a href="#@buttonize/cdk.ButtonizeCustomTargetProps.property.apiKey">apiKey</a></code> | <code>string</code> | *No description.* |
 
 ---
 
@@ -642,16 +676,6 @@ public readonly widget: Widget;
 ```
 
 - *Type:* <a href="#@buttonize/cdk.Widget">Widget</a>
-
----
-
-##### `apiKey`<sup>Optional</sup> <a name="apiKey" id="@buttonize/cdk.ButtonizeCustomTargetProps.property.apiKey"></a>
-
-```typescript
-public readonly apiKey: string;
-```
-
-- *Type:* string
 
 ---
 
@@ -813,14 +837,14 @@ public readonly type: string;
 
 ## Classes <a name="Classes" id="Classes"></a>
 
-### ButtonizeApiKey <a name="ButtonizeApiKey" id="@buttonize/cdk.ButtonizeApiKey"></a>
+### ButtonizeGlobalConfig <a name="ButtonizeGlobalConfig" id="@buttonize/cdk.ButtonizeGlobalConfig"></a>
 
-#### Initializers <a name="Initializers" id="@buttonize/cdk.ButtonizeApiKey.Initializer"></a>
+#### Initializers <a name="Initializers" id="@buttonize/cdk.ButtonizeGlobalConfig.Initializer"></a>
 
 ```typescript
-import { ButtonizeApiKey } from '@buttonize/cdk'
+import { ButtonizeGlobalConfig } from '@buttonize/cdk'
 
-new ButtonizeApiKey()
+new ButtonizeGlobalConfig()
 ```
 
 | **Name** | **Type** | **Description** |
@@ -833,25 +857,46 @@ new ButtonizeApiKey()
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#@buttonize/cdk.ButtonizeApiKey.setDefaultApiKey">setDefaultApiKey</a></code> | *No description.* |
+| <code><a href="#@buttonize/cdk.ButtonizeGlobalConfig.enableLogs">enableLogs</a></code> | *No description.* |
+| <code><a href="#@buttonize/cdk.ButtonizeGlobalConfig.setDefaultApiKey">setDefaultApiKey</a></code> | *No description.* |
 
 ---
 
-##### `setDefaultApiKey` <a name="setDefaultApiKey" id="@buttonize/cdk.ButtonizeApiKey.setDefaultApiKey"></a>
+##### `enableLogs` <a name="enableLogs" id="@buttonize/cdk.ButtonizeGlobalConfig.enableLogs"></a>
 
 ```typescript
-import { ButtonizeApiKey } from '@buttonize/cdk'
+import { ButtonizeGlobalConfig } from '@buttonize/cdk'
 
-ButtonizeApiKey.setDefaultApiKey(scope: Construct, apiKey: string)
+ButtonizeGlobalConfig.enableLogs(scope: Construct, retention?: RetentionDays)
 ```
 
-###### `scope`<sup>Required</sup> <a name="scope" id="@buttonize/cdk.ButtonizeApiKey.setDefaultApiKey.parameter.scope"></a>
+###### `scope`<sup>Required</sup> <a name="scope" id="@buttonize/cdk.ButtonizeGlobalConfig.enableLogs.parameter.scope"></a>
 
 - *Type:* constructs.Construct
 
 ---
 
-###### `apiKey`<sup>Required</sup> <a name="apiKey" id="@buttonize/cdk.ButtonizeApiKey.setDefaultApiKey.parameter.apiKey"></a>
+###### `retention`<sup>Optional</sup> <a name="retention" id="@buttonize/cdk.ButtonizeGlobalConfig.enableLogs.parameter.retention"></a>
+
+- *Type:* aws-cdk-lib.aws_logs.RetentionDays
+
+---
+
+##### `setDefaultApiKey` <a name="setDefaultApiKey" id="@buttonize/cdk.ButtonizeGlobalConfig.setDefaultApiKey"></a>
+
+```typescript
+import { ButtonizeGlobalConfig } from '@buttonize/cdk'
+
+ButtonizeGlobalConfig.setDefaultApiKey(scope: Construct, apiKey: string)
+```
+
+###### `scope`<sup>Required</sup> <a name="scope" id="@buttonize/cdk.ButtonizeGlobalConfig.setDefaultApiKey.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+###### `apiKey`<sup>Required</sup> <a name="apiKey" id="@buttonize/cdk.ButtonizeGlobalConfig.setDefaultApiKey.parameter.apiKey"></a>
 
 - *Type:* string
 

@@ -10,12 +10,12 @@ export interface ButtonizeLambdaEventSourceOptions {
 
 export class ButtonizeLambdaEventSource implements IEventSource {
 	private readonly widgetProps: Widget
-	private readonly options?: ButtonizeLambdaEventSourceOptions
+	private readonly options: ButtonizeLambdaEventSourceOptions
 	private readonly id: string
 
 	constructor(
 		widgetProps: Widget,
-		options?: ButtonizeLambdaEventSourceOptions
+		options: ButtonizeLambdaEventSourceOptions = {}
 	) {
 		this.widgetProps = widgetProps
 		this.options = options
@@ -32,7 +32,7 @@ export class ButtonizeLambdaEventSource implements IEventSource {
 				lambdaArn: target.functionArn
 			},
 			widget: this.widgetProps,
-			apiKey: this.options?.apiKey
+			apiKey: this.options.apiKey
 		})
 	}
 }

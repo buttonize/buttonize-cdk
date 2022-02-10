@@ -47,3 +47,5 @@ junit.xml
 .jsii
 tsconfig.json
 !/API.md
+src/**/*.js
+src/**/*.d.ts

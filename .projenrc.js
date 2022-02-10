@@ -46,13 +46,14 @@ const project = new awscdk.AwsCdkConstructLibrary({
 		jestConfig: {
 			collectCoverage: true,
 			collectCoverageFrom: ['src/**/*.ts'],
-			coverageProvider: 'v8'
-			// coverageThreshold: {
-			// 	branches: 100,
-			// 	functions: 100,
-			// 	lines: 100,
-			// 	statements: 100
-			// }
+			coveragePathIgnorePatterns: ['src/index.ts', 'src/types.ts'],
+			coverageProvider: 'v8',
+			coverageThreshold: {
+				branches: 100,
+				functions: 100,
+				lines: 100,
+				statements: 100
+			}
 		}
 	},
 
@@ -102,5 +103,8 @@ project.setScript('prepare', 'husky install')
 	'commitlint.config.js',
 	'renovate.json'
 ].forEach((pattern) => project.addPackageIgnore(pattern))
+
+project.addGitIgnore('src/**/*.js')
+project.addGitIgnore('src/**/*.d.ts')
 
 project.synth()

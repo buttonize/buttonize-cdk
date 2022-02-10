@@ -6,19 +6,18 @@ export interface ButtonizeCustomTargetProps {
 	readonly inputVtlTemplate: string
 	readonly outputVtlTemplate: string
 	readonly widget: Widget
+}
+
+export interface ButtonizeCustomTargetOptions {
 	readonly apiKey?: string
 }
 
 export class ButtonizeCustomTarget extends Construct {
-	protected constructor(
+	constructor(
 		scope: Construct,
 		id: string,
-		{
-			widget,
-			apiKey,
-			inputVtlTemplate,
-			outputVtlTemplate
-		}: ButtonizeCustomTargetProps
+		{ widget, inputVtlTemplate, outputVtlTemplate }: ButtonizeCustomTargetProps,
+		{ apiKey }: ButtonizeCustomTargetOptions = {}
 	) {
 		super(scope, id)
 		new ButtonizeCustomResource(this, id, {
