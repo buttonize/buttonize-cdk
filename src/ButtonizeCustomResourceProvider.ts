@@ -32,6 +32,8 @@ export class ButtonizeCustomResourceProvider extends Construct {
 	}
 
 	public readonly serviceToken: string
+	private readonly handler: SingletonFunction
+	private defaultApiKey: string | boolean = false
 
 	protected constructor(scope: Construct) {
 		super(scope, ButtonizeCustomResourceProvider.CUSTOM_RESOURCE_PROVIDER_ID)
@@ -50,7 +52,7 @@ export class ButtonizeCustomResourceProvider extends Construct {
 							actions: ['logs:CreateLogStream', 'logs:CreateLogGroup'],
 							resources: [
 								Fn.sub(
-									`arn:\${AWS::Partition}:logs:\${AWS::Region}:\${AWS::AccountId}:log-group:${functionName}*:*`
+									`arn:\${AWS::Partition}:logs:\${AWS::Region}:\${AWS::AccountId}:log-group:/aws/lambda/${functionName}*:*`
 								)
 							]
 						}),
@@ -59,7 +61,7 @@ export class ButtonizeCustomResourceProvider extends Construct {
 							actions: ['logs:PutLogEvents'],
 							resources: [
 								Fn.sub(
-									`arn:\${AWS::Partition}:logs:\${AWS::Region}:\${AWS::AccountId}:log-group:${functionName}*:*:*`
+									`arn:\${AWS::Partition}:logs:\${AWS::Region}:\${AWS::AccountId}:log-group:/aws/lambda/${functionName}*:*:*`
 								)
 							]
 						})
@@ -68,7 +70,7 @@ export class ButtonizeCustomResourceProvider extends Construct {
 			}
 		})
 
-		const handler = new SingletonFunction(this, 'LambdaHandler', {
+		this.handler = new SingletonFunction(this, 'LambdaHandler', {
 			functionName,
 			role,
 			code: Code.fromAsset(path.join(__dirname, 'custom-resource')),
@@ -80,6 +82,17 @@ export class ButtonizeCustomResourceProvider extends Construct {
 			logRetention: RetentionDays.THREE_MONTHS
 		})
 
-		this.serviceToken = handler.functionArn
+		this.serviceToken = this.handler.functionArn
+	}
+
+	public setDefaultApiKey(apiKey: string): void {
+		if (this.defaultApiKey !== false) {
+			throw new Error(
+				`Default Buttonize API key has been already set. (value="${this.defaultApiKey}")`
+			)
+		}
+
+		this.handler.addEnvironment('DEFAULT_API_KEY', apiKey)
+		this.defaultApiKey = apiKey
 	}
 }

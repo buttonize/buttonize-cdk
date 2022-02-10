@@ -1,7 +1,37 @@
 import * as cdk from 'aws-cdk-lib'
+import { Duration } from 'aws-cdk-lib'
 import { Template } from 'aws-cdk-lib/assertions'
+import { Code, Function, Runtime } from 'aws-cdk-lib/aws-lambda'
+import { RetentionDays } from 'aws-cdk-lib/aws-logs'
+import { Construct } from 'constructs'
+import { ButtonizeApiKey, ButtonizeLambdaEventSource } from '../src'
 
-import { Buttonize } from '../src/test'
+export class Buttonize extends Construct {
+	constructor(scope: Construct, id: string) {
+		super(scope, id)
+
+		ButtonizeApiKey.setDefaultApiKey(this, 'asdasda')
+
+		const handler = new Function(this, 'LambdaHandler', {
+			functionName: 'karel',
+			code: Code.fromInline('exports.handler = async () => {return `hello`}'),
+			runtime: Runtime.NODEJS_14_X,
+			handler: 'index.handler',
+			timeout: Duration.minutes(2),
+			logRetention: RetentionDays.THREE_MONTHS
+		})
+
+		handler.addEventSource(
+			new ButtonizeLambdaEventSource(
+				{
+					name: 'asda',
+					type: 'button'
+				},
+				{ apiKey: 'asda' }
+			)
+		)
+	}
+}
 
 describe('ProcessorStack', () => {
 	test('synthesizes the way we expect', () => {

@@ -2,9 +2,12 @@ import { CfnResource } from 'aws-cdk-lib'
 import { Construct } from 'constructs'
 
 import { ButtonizeCustomResourceProvider } from './ButtonizeCustomResourceProvider'
+import { LambdaResource, Widget } from './types'
 
-export interface ButtonizeCustomResourceProps {
-	lambda: string
+export type ButtonizeCustomResourceProps = {
+	resource: LambdaResource
+	widget: Widget
+	apiKey?: string
 }
 
 export class ButtonizeCustomResource extends CfnResource {
@@ -15,7 +18,8 @@ export class ButtonizeCustomResource extends CfnResource {
 				ServiceToken:
 					ButtonizeCustomResourceProvider.getOrCreateProvider(scope)
 						.serviceToken,
-				lambda: props.lambda
+				props: JSON.stringify(props),
+				...(typeof props.apiKey === 'undefined' ? {} : { apiKey: props.apiKey })
 			}
 		})
 	}
