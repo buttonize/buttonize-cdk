@@ -45,7 +45,7 @@ jobs:
           cat .repo.patch
           exit 1
       - name: Upload artifact
-        uses: actions/upload-artifact@v2.1.1
+        uses: actions/upload-artifact@v2.1.4
         with:
           name: build-artifact
           path: dist
